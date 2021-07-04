@@ -1,6 +1,6 @@
 'use strict';
 
-import {  } from "./styles";
+import "./PostTitle.css";
 
 /* const styled = require('styled-components');
 
@@ -16,7 +16,7 @@ function PostTitle() {
   return (
     <section className="header">
       <h2 className="title">Previous Rulings</h2>
-      <div className="selector">
+      <div className="selector__box">
         <select
           className="selector__options"
           defaultValue="grid"
