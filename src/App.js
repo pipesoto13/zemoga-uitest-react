@@ -1,10 +1,10 @@
-
+import PostTitle from './components/PostTitle/PostTitle';
 
 function App() {
   return (
-    <div >
-
-    </div>
+    <>
+      <PostTitle></PostTitle>
+    </>
   );
 }
 
