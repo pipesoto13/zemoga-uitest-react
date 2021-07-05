@@ -9,9 +9,13 @@ function PostsSection ({data}) {
   
   const [view, setView] = useState("list");
 
+  const handleChange = (value) => {
+    setView(value)
+  }
+
   return (
     <>
-      <PostTitle onChange={setView}></PostTitle>
+      <PostTitle onChange={handleChange}></PostTitle>
       <StyledDiv className={`post-view post-view--${view}`}>
         {data.map(
           ({ name, description, category, picture, lastUpdated, votes }, i) => (
