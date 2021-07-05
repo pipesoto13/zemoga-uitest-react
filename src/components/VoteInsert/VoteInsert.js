@@ -1,93 +1,63 @@
 import React, { useState } from "react";
+import { StyledDiv } from "./styles";
 
-/* type State = "VOTE_UP" | "VOTE_DOWN";
+function VoteInsert() {
 
-interface Props {
-  onSubmit: (event: State) => void;
-  renderUpdateLabel?: ({ vote }: { vote?: boolean }) => React.ReactElement;
-  alreadyVote?: boolean;
-}
-
-const VotesInput: React.FC<Props> = ({
-  onSubmit,
-  renderUpdateLabel = () => null,
-  alreadyVote = false,
-}) => {
-  const [value, setValue] = useState<State>();
-  const [vote, setVote] = useState(alreadyVote);
+  const [value, setValue] = useState(null);
+  const [vote, setVote] = useState(false);
 
   const handleVote = () => {
     if (vote) {
-      setValue(undefined);
+      setValue(null);
       setVote(false);
     }
 
     if (vote === false) {
-      onSubmit(value as State);
       setVote(true);
     }
-  }; */
-
-function VoteInsert() {
-
-  const [vote, setVote] = useState(false);
+  };
 
   return (
-    <div>
-      {/* {renderUpdateLabel({ vote })} */}
+    <StyledDiv>
       <div className="votes-input">
-        {vote === false && (
+        {!vote && (
           <>
-              <button
-                /* className={`${className} buttons buttons--${type} buttons--${
-                  isActive ? "active" : ""
-                }`}
-                type="button"
-                aria-label={`thumbs ${type}`}
-                onClick={onClick}
-                type="up"
-                isActive={value === "VOTE_UP"}
-                className="votes-input__buttons--vote-icon"
-                onClick={() => setValue("VOTE_UP")} */
-              >
-                <img
-                  /* className={className}
-                  src={`assets/img/thumbs-${type}.svg`}
-                  alt={`thumbs ${type}`} */
-                />
-              </button>
-
             <button
-              /* className={`${className} buttons buttons--${type} buttons--${
-                isActive ? "active" : ""
-              }`}
               type="button"
-              aria-label={`thumbs ${type}`}
-              onClick={onClick}
-              type="down"
-              isActive={value === "VOTE_DOWN"}
-              className="votes-input__buttons--vote-icon"
-              onClick={() => setValue("VOTE_DOWN")} */
+              aria-label={`thumbs up`}
+              className={`votes-input__buttons--vote-icon buttons buttons--up buttons--${value === "upVote"? 'active' : ''}`}
+              onClick={() => setValue("upVote")}
             >
               <img
-                /* className={className}
-                src={`assets/img/thumbs-${type}.svg`}
-                alt={`thumbs ${type}`} */
+                src={`assets/img/thumbs-up.svg`}
+                alt={`up icon`}
+              />
+            </button>
+
+            <button
+              type="button"
+              aria-label={`thumbs down`}
+              className={`votes-input__buttons--vote-icon buttons buttons--down buttons--${value === "downVote"? 'active' : ''}`}
+              onClick={() => setValue("downVote")}
+            >
+              <img
+                src={`assets/img/thumbs-up.svg`}
+                alt={`down icon`}
               />
             </button>
           </>
         )}
         <button
-          /* className="votes-input__buttons votes-input__buttons--vote"
+          className="votes-input__buttons votes-input__buttons--vote "
           type="button"
           disabled={!value}
           onClick={handleVote}
-          aria-label="vote now" */
+          aria-label="vote now"
         >
-          {vote === false ? "Vote Now" : "Vote Again"}
+          {!vote ? "Vote Now" : "Vote Again"}
         </button>
       </div>
-    </div>
+    </StyledDiv>
   );
 };
 

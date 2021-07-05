@@ -2,7 +2,6 @@ import React  from "react";
 
 import { CardContainer } from "./styles";
 import VoteInsert from "../VoteInsert/VoteInsert";
-import ElonImg from "../../assets/img/elon.png"
 
 
 /* const Card: React.FC<Celebrity> = ({
@@ -65,7 +64,7 @@ function Card({ name, description, category, picture, lastUpdated, votes }) {
             </div>
             <VoteInsert
               renderUpdateLabel={({ vote }) => (
-                <p className="last-updated-label">
+                <p className="last-updated-label"> {/* Timestamp */}
                   {/* {false//voted
                     ? "Thank you for your vote!"
                     : `${getRelativeTime(lastUpdated)} ${category}`} */}
