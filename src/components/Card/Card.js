@@ -1,5 +1,6 @@
-import React  from "react";
+import React, {useState} from "react";
 
+import { formatDistanceToNow } from 'date-fns'
 import { CardContainer } from "./styles";
 import VoteInsert from "../VoteInsert/VoteInsert";
 
@@ -29,6 +30,17 @@ import VoteInsert from "../VoteInsert/VoteInsert";
 
 function Card({ name, description, category, picture, lastUpdated, votes }) {
 
+  const [btnAgain, setBtnAgain] = useState(null);
+
+  const handleBtnAgain = (value) => {
+    setBtnAgain(value)
+  }
+
+  const dateDistance = formatDistanceToNow(
+    new Date(lastUpdated),
+    { addSuffix: true, addPrefix: false }
+  )
+
   return (
     <CardContainer className="people-card">
       <div
@@ -37,7 +49,6 @@ function Card({ name, description, category, picture, lastUpdated, votes }) {
       >
         <div className="people-card__footer">
           <div className="people-card__content">
-             {/* CardCaption */}
             <div className="card-caption">
               <div className="card-caption__header">
                 <div>
@@ -58,18 +69,16 @@ function Card({ name, description, category, picture, lastUpdated, votes }) {
               <p className="card-caption__description">{description}</p>
             </div>
             <div>
-              <span className="last-updated-label"> {/* Timestamp */}
-                {false//voted
-                  ? "Thank you for your vote!"
-                  : `${category}`}
-              </span>
-              <VoteInsert/>
+              <div className="last-updated-label">
+                {!!btnAgain && <span>Thank you for your vote!</span>}
+                {!btnAgain && <span>{dateDistance} in <span className="category">{category}</span></span>}
+              </div>
+              <VoteInsert handleBtnAgain={handleBtnAgain}/>
             </div>
           </div>
           <div className="people-card__progress">
             <div
               className="people-card__progress-val people-card__progress-val--up"
-              /* style={{ width: upVotesPerLabel }} */
             >
               <div className="people-card__progress-label">
                 <img
@@ -83,7 +92,6 @@ function Card({ name, description, category, picture, lastUpdated, votes }) {
             </div>
             <div
               className="people-card__progress-val people-card__progress-val--down"
-              /* style={{ width: downVotesPerLabel }} */
             >
               <div className="people-card__progress-label">
                 <span>{"downVotesPerLabel"}</span>

@@ -100,7 +100,7 @@ export const CardContainer = styled.article`
   }
 
   .last-updated-label {
-    color: #FFFFFF;
+    color: #111111;
     text-align: right;
     font-size: 12px;
     line-height: 14px;
@@ -108,6 +108,10 @@ export const CardContainer = styled.article`
     @media all and (min-width: 1100px){
       font-size: 15px;
       line-height: 18px;
+    }
+
+    .category {
+      text-transform: capitalize;
     }
   }
 `

@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import { StyledDiv } from "./styles";
 
-function VoteInsert() {
+function VoteInsert({handleBtnAgain}) {
 
   const [value, setValue] = useState(null);
   const [vote, setVote] = useState(false);
 
-  const handleVote = () => {
+  const handleVote = (e) => {
     if (vote) {
       setValue(null);
       setVote(false);
+      handleBtnAgain(false);
     }
-
+    
     if (vote === false) {
       setVote(true);
+      handleBtnAgain(true);
     }
   };
 
