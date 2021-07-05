@@ -22,7 +22,7 @@ export const StyledDiv = styled.div`
           &__header > div {
             position: absolute;
             left: 0;
-            right: 0;
+            top: 0;
           }
 
           &__description {
@@ -41,7 +41,7 @@ export const StyledDiv = styled.div`
             #666666 50%,
             rgba(51, 51, 51, 0.6) 71.88%
           );
-          @media all and (min-width: 1024px) {
+          @media all and (min-width: 1100px) {
             background: linear-gradient(
               90deg,
               rgba(0, 0, 0, 0.0001) 0%,

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledDiv = styled.div`
+
   .votes-input {
     box-sizing: border-box;
     display: flex;
@@ -15,10 +16,12 @@ export const StyledDiv = styled.div`
       border: none;
       outline: none;
       height: 38px;
+      width: 107px;
       padding: 0;
 
       @media all and (min-width: 1100px){
         height: 45px;
+        width: 135px;
       }
 
       &--vote-icon {
@@ -29,7 +32,6 @@ export const StyledDiv = styled.div`
         background: #30303099;
         color: white;
         text-align: center;
-        min-width: 8.333rem;
         font-family: Lato;
         font-size: 15px;
         line-height: 18px;

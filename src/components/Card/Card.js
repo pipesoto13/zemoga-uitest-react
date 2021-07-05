@@ -41,20 +41,15 @@ function Card({ name, description, category, picture, lastUpdated, votes }) {
             <div className="card-caption">
               <div className="card-caption__header">
                 <div>
-                  {/* ButtonIcon */}
                   <button
-                    /* className={`${className} buttons buttons--${type} buttons--${
-                      isActive ? "active" : ""
-                    }`} */
+                    className={`buttons buttons--${'up'}`}
                     type="button"
                     aria-label={`thumbs up`}
-                    /* onClick={onClick} */
                   >
                     <img
-                      type="down"
                       className="people-card__progress-icon"
-                      src={`assets/img/thumbs-down.svg`}
-                      alt={`thumbs down`}
+                      src={`assets/img/thumbs-up.svg`}
+                      alt={`thumbs up`}
                     />
                   </button>
                 </div>
@@ -62,16 +57,14 @@ function Card({ name, description, category, picture, lastUpdated, votes }) {
               </div>
               <p className="card-caption__description">{description}</p>
             </div>
-            <VoteInsert
-              renderUpdateLabel={({ vote }) => (
-                <p className="last-updated-label"> {/* Timestamp */}
-                  {/* {false//voted
-                    ? "Thank you for your vote!"
-                    : `${getRelativeTime(lastUpdated)} ${category}`} */}
-                </p>
-              )}
-              /* onSubmit={handleSubmit} */
-            />
+            <div>
+              <span className="last-updated-label"> {/* Timestamp */}
+                {false//voted
+                  ? "Thank you for your vote!"
+                  : `${category}`}
+              </span>
+              <VoteInsert/>
+            </div>
           </div>
           <div className="people-card__progress">
             <div
