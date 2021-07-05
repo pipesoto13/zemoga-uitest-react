@@ -30,7 +30,18 @@ import VoteInsert from "../VoteInsert/VoteInsert";
 
 function Card({ name, description, category, picture, lastUpdated, votes }) {
 
+
   const [btnAgain, setBtnAgain] = useState(null);
+  const [upVotes, setUpVotes] = useState(votes.positive);
+  const [downVotes, setDownVotes] = useState(votes.negative);
+
+  const percentOfVotes = (upVotes, downVotes) => {
+    const perncetUp = (upVotes/(upVotes + downVotes))*100;
+    const perncetDown = 100 - perncetUp;
+    return [perncetUp, perncetDown];
+  }
+
+  const [perncetUp, perncetDown] = percentOfVotes(upVotes, downVotes)
 
   const handleBtnAgain = (value) => {
     setBtnAgain(value)
@@ -53,7 +64,7 @@ function Card({ name, description, category, picture, lastUpdated, votes }) {
               <div className="card-caption__header">
                 <div>
                   <button
-                    className={`buttons buttons--${'up'}`}
+                    className={`buttons buttons--${perncetUp>=50 ? 'up' : 'down'}`}
                     type="button"
                     aria-label={`thumbs up`}
                   >
@@ -76,9 +87,11 @@ function Card({ name, description, category, picture, lastUpdated, votes }) {
               <VoteInsert handleBtnAgain={handleBtnAgain}/>
             </div>
           </div>
+
           <div className="people-card__progress">
             <div
               className="people-card__progress-val people-card__progress-val--up"
+              style={{ width: `${perncetUp}%` }}
             >
               <div className="people-card__progress-label">
                 <img
@@ -87,14 +100,15 @@ function Card({ name, description, category, picture, lastUpdated, votes }) {
                   src={`assets/img/thumbs-up.svg`}
                   alt={`thumbs up`}
                 />
-                <span>{"upVotesPerLabel"}</span>
+                <span>{perncetUp.toFixed(1)}</span>
               </div>
             </div>
             <div
               className="people-card__progress-val people-card__progress-val--down"
+              style={{ width: `${perncetDown}%` }}
             >
               <div className="people-card__progress-label">
-                <span>{"downVotesPerLabel"}</span>
+                <span>{perncetDown.toFixed(1)}</span>
                 <img
                   type="down"
                   className="people-card__progress-icon"
@@ -104,6 +118,7 @@ function Card({ name, description, category, picture, lastUpdated, votes }) {
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </CardContainer>
