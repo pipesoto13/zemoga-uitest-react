@@ -1,11 +1,11 @@
-import PostTitle from './components/PostTitle/PostTitle';
-import Card from './components/Card/Card';
+import PostsSection from './components/PostsSection/PostsSection';
+import {data} from "./assets/data.json";
+
 
 function App() {
   return (
     <>
-      <PostTitle></PostTitle>
-      <Card></Card>
+      <PostsSection data={data}></PostsSection>
     </>
   );
 }

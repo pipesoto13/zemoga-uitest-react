@@ -5,7 +5,7 @@ import {Header, SelectContainer, SelectorListContainer, SelectorList, ListItem, 
 
 const options = ["List", "Grid"];
 
-function PostTitle() {
+function PostTitle({ onChange }) {
 
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("List");
@@ -26,7 +26,7 @@ function PostTitle() {
         >
           {selectedOption}
         </SelectorHeader>
-        {isOpen && (
+        {!!isOpen && (
           <SelectorListContainer>
             <SelectorList>
               {options.map((option, i) => (

@@ -1,7 +1,8 @@
 import React  from "react";
 
+import { CardContainer } from "./styles";
 import VoteInsert from "../VoteInsert/VoteInsert";
-import {data} from "../../assets/data.json"
+import ElonImg from "../../assets/img/elon.png"
 
 
 /* const Card: React.FC<Celebrity> = ({
@@ -27,16 +28,13 @@ import {data} from "../../assets/data.json"
     [increase, decrease]
   ); */
 
-function Card() {
-
-  const name = data[4].name
-  const description = data[4].description
+function Card({ name, description, category, picture, lastUpdated, votes }) {
 
   return (
-    <div className="people-card">
+    <CardContainer className="people-card">
       <div
         className="people-card__bg"
-        /* style={{ backgroundImage: `url(/assets/img/${picture})` }} */
+        style={{ backgroundImage: `url(/assets/img/${picture})`}}
       >
         <div className="people-card__footer">
           <div className="people-card__content">
@@ -108,7 +106,7 @@ function Card() {
           </div>
         </div>
       </div>
-    </div>
+    </CardContainer>
   );
 };
 
