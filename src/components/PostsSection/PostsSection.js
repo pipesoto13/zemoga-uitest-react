@@ -18,7 +18,7 @@ function PostsSection ({data}) {
       <PostTitle onChange={handleChange}></PostTitle>
       <StyledDiv className={`post-view post-view--${view}`}>
         {data.map(
-          ({ name, description, category, picture, lastUpdated, votes }, i) => (
+          ({ name, description, category, picture, lastUpdated, votes, }, i) => (
             <Card
               key={i}
               picture={picture}
@@ -28,6 +28,7 @@ function PostsSection ({data}) {
               lastUpdated={lastUpdated}
               votes={votes}
               index={i}
+              view={view}
             />
           )
         )}

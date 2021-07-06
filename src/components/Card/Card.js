@@ -5,7 +5,7 @@ import { CardContainer } from "./styles";
 import VoteInsert from "../VoteInsert/VoteInsert";
 
 
-function Card({ name, description, category, picture, lastUpdated, votes, index }) {
+function Card({ name, description, category, picture, lastUpdated, votes, index, view }) {
 
 
   const [btnAgain, setBtnAgain] = useState(null);
@@ -22,6 +22,7 @@ function Card({ name, description, category, picture, lastUpdated, votes, index 
 
   const handleBtnAgain = (active) => {
     setBtnAgain(active);
+    console.log(view);
   }
   
   const handleVoteValue = (value) => {
@@ -39,7 +40,7 @@ function Card({ name, description, category, picture, lastUpdated, votes, index 
         className="card__img"
         style={{ backgroundImage: `url(/assets/img/${picture})`}}
       >
-        <div className="card__gradient">
+        <div className={`card__gradient ${view}`} >
           <div className="card__content">
             <div className="info">
               <div className="info__header">
