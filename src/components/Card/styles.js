@@ -32,7 +32,7 @@ export const CardContainer = styled.article`
       padding-right: 34px;
     }
 
-    .card__footer {
+    .card__gradient {
       background: linear-gradient(
         180deg,
         rgba(0, 0, 0, 0.0001) 0%,
@@ -76,16 +76,23 @@ export const CardContainer = styled.article`
     }
   }
 
-  .card-caption {
+  .info {
     &__header {
       display: flex;
       align-items: flex-end;
+      
     }
+    
     &__title {
       font-size: 30px;
       line-height: 36px;
       color: #FFFFFF;
       margin-bottom: -5px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
 
       @media all and (min-width: 768px){
         font-size: 28px;
@@ -117,6 +124,7 @@ export const CardContainer = styled.article`
       @media all and (min-width: 1100px){
         font-size: 18px;
         line-height: 22px;
+        width: 460px;
       }
     }
   }

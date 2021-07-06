@@ -16,7 +16,7 @@ export const StyledDiv = styled.div`
       flex-wrap: wrap;
       .card {
         flex-basis: 100%;
-        .card-caption {
+        .info {
           flex-basis: 50%;
           margin-left: 150px;
           
@@ -33,10 +33,12 @@ export const StyledDiv = styled.div`
 
             @media all and (min-width: 1100px) {
               margin-left: 70px;
+              margin-bottom: 0.8rem;
+              margin-top: 0;
             }
           }
         }
-        &__footer {
+        &__gradient {
           position: relative;
           width: 100%;
           background: linear-gradient(
@@ -58,6 +60,7 @@ export const StyledDiv = styled.div`
         }
 
         &__img {
+          margin-right: 0;
           background: left no-repeat;
           background-size: contain;
           &::before {

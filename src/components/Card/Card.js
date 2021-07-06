@@ -39,10 +39,10 @@ function Card({ name, description, category, picture, lastUpdated, votes, index 
         className="card__img"
         style={{ backgroundImage: `url(/assets/img/${picture})`}}
       >
-        <div className="card__footer">
+        <div className="card__gradient">
           <div className="card__content">
-            <div className="card-caption">
-              <div className="card-caption__header">
+            <div className="info">
+              <div className="info__header">
                 <div>
                   <button
                     className={`buttons buttons--${perncetUp>=50 ? 'up' : 'down'}`}
@@ -56,9 +56,9 @@ function Card({ name, description, category, picture, lastUpdated, votes, index 
                     />
                   </button>
                 </div>
-                <h2 className="card-caption__title">{name}</h2>
+                <h2 className="info__title">{name}</h2>
               </div>
-              <p className="card-caption__description">{description}</p>
+              <p className="info__description">{description}</p>
             </div>
             <div>
               <div className="timestamp">
