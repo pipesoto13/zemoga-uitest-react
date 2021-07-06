@@ -82,33 +82,49 @@ export const CardContainer = styled.article`
     }
     &__title {
       font-size: 30px;
+      line-height: 36px;
+      color: #FFFFFF;
       margin-bottom: -5px;
+
+      @media all and (min-width: 768px){
+        font-size: 28px;
+        line-height: 34px;
+      }
 
       @media all and (min-width: 1100px){
         margin-left:70px;
+        font-size: 36px;
+        line-height: 63px;
       }
     }
     &__description {
-      margin-left: 30px;
       font-size: 15px;
       line-height: 18px;
-    }
-    &__title,
-    &__description {
-      color: #fff;
+      color: #FFFFFF;
+      margin-left: 30px;
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
+
+      @media all and (min-width: 768px){
+        font-size: 14px;
+        line-height: 17px;
+      }
+
+      @media all and (min-width: 1100px){
+        font-size: 18px;
+        line-height: 22px;
+      }
     }
   }
 
-  .last-updated-label {
-    color: #FFFFFF;
-    text-align: right;
+  .timestamp {
     font-size: 12px;
     line-height: 14px;
+    text-align: right;
+    color: #FFFFFF;
 
     @media all and (min-width: 1100px){
       font-size: 15px;

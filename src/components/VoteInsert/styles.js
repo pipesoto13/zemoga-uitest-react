@@ -7,7 +7,7 @@ export const StyledDiv = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-bottom: 12px;
+    margin: 12px 0;
 
     &__buttons {
       display: flex;

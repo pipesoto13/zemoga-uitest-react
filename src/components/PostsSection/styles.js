@@ -19,6 +19,7 @@ export const StyledDiv = styled.div`
         .card-caption {
           flex-basis: 50%;
           margin-left: 150px;
+          
           &__header > div {
             position: absolute;
             left: 0;

@@ -61,7 +61,7 @@ function Card({ name, description, category, picture, lastUpdated, votes, index 
               <p className="card-caption__description">{description}</p>
             </div>
             <div>
-              <div className="last-updated-label">
+              <div className="timestamp">
                 {!!btnAgain && <span>Thank you for your vote!</span>}
                 {!btnAgain && <span>{dateDistance} in <span className="category">{category}</span></span>}
               </div>
