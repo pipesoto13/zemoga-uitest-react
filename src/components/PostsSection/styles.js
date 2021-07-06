@@ -38,6 +38,7 @@ export const StyledDiv = styled.div`
             }
           }
         }
+        
         &__gradient {
           position: relative;
           width: 100%;
