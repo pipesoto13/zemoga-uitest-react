@@ -27,6 +27,7 @@ function PostsSection ({data}) {
               category={category}
               lastUpdated={lastUpdated}
               votes={votes}
+              index={i}
             />
           )
         )}

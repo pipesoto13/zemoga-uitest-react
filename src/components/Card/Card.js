@@ -5,30 +5,7 @@ import { CardContainer } from "./styles";
 import VoteInsert from "../VoteInsert/VoteInsert";
 
 
-/* const Card: React.FC<Celebrity> = ({
-  picture,
-  votes: defaultVotes,
-  name,
-  description,
-  lastUpdated,
-  category,
-}) => {
-  const [votes, { increase, decrease }] = useVotesCount(name, defaultVotes);
-  const { positive, negative } = votes;
-
-  const handleSubmit = useCallback(
-    (value: string) => {
-      if (value === "VOTE_UP") {
-        increase();
-      }
-      if (value === "VOTE_DOWN") {
-        decrease();
-      }
-    },
-    [increase, decrease]
-  ); */
-
-function Card({ name, description, category, picture, lastUpdated, votes }) {
+function Card({ name, description, category, picture, lastUpdated, votes, index }) {
 
 
   const [btnAgain, setBtnAgain] = useState(null);
@@ -43,8 +20,12 @@ function Card({ name, description, category, picture, lastUpdated, votes }) {
 
   const [perncetUp, perncetDown] = percentOfVotes(upVotes, downVotes)
 
-  const handleBtnAgain = (value) => {
-    setBtnAgain(value)
+  const handleBtnAgain = (active) => {
+    setBtnAgain(active);
+  }
+  
+  const handleVoteValue = (value) => {
+    value === 'upVote' ? setUpVotes(prev => prev+1) : setDownVotes(prev => prev+1);
   }
 
   const dateDistance = formatDistanceToNow(
@@ -84,7 +65,7 @@ function Card({ name, description, category, picture, lastUpdated, votes }) {
                 {!!btnAgain && <span>Thank you for your vote!</span>}
                 {!btnAgain && <span>{dateDistance} in <span className="category">{category}</span></span>}
               </div>
-              <VoteInsert handleBtnAgain={handleBtnAgain}/>
+              <VoteInsert handleVoteValue={handleVoteValue} handleBtnAgain={handleBtnAgain} index={index}/>
             </div>
           </div>
 

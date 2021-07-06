@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { StyledDiv } from "./styles";
 
-function VoteInsert({handleBtnAgain}) {
+function VoteInsert({handleBtnAgain, index, handleVoteValue}) {
 
+  const data = JSON.parse(localStorage.getItem('data'))
+
+  const [info, setInfo] = useState(data)
   const [value, setValue] = useState(null);
   const [vote, setVote] = useState(false);
 
@@ -16,6 +19,10 @@ function VoteInsert({handleBtnAgain}) {
     if (vote === false) {
       setVote(true);
       handleBtnAgain(true);
+      value === 'upVote' ? data[index].votes.positive += 1 : data[index].votes.negative += 1;
+      console.log(data[index].votes);
+      localStorage.setItem("data", JSON.stringify(data))
+      handleVoteValue(value)
     }
   };
 
