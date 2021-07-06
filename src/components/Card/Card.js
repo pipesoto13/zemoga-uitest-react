@@ -22,7 +22,6 @@ function Card({ name, description, category, picture, lastUpdated, votes, index,
 
   const handleBtnAgain = (active) => {
     setBtnAgain(active);
-    console.log(view);
   }
   
   const handleVoteValue = (value) => {

@@ -1,17 +1,5 @@
 import styled from "styled-components";
 
-const handleBgView = type => {
-  
-  if (type === 'list') {
-    return `linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.0001) 0%,
-      #888888 19.79%,
-      #666666 50%,
-      rgba(51, 51, 51, 0.6) 71.88%
-    );`
-  }
-};
 
 export const StyledDiv = styled.div`
   &.post-view {
