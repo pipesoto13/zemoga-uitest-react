@@ -14,12 +14,13 @@ export const CardContainer = styled.article`
     flex: 0 0 90%;
   }
 
-  .card__bg {
+  .card__img {
     height: 100%;
     background: center no-repeat;
     background-size: cover;
     display: flex;
     align-items: flex-end;
+    margin-right: 11px;
 
     &:before {
       content: "";
@@ -125,6 +126,8 @@ export const CardContainer = styled.article`
     line-height: 14px;
     text-align: right;
     color: #FFFFFF;
+    margin: 10px 0;
+    font-weight: bold;
 
     @media all and (min-width: 1100px){
       font-size: 15px;

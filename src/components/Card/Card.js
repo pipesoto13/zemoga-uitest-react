@@ -36,7 +36,7 @@ function Card({ name, description, category, picture, lastUpdated, votes, index 
   return (
     <CardContainer className="card">
       <div
-        className="card__bg"
+        className="card__img"
         style={{ backgroundImage: `url(/assets/img/${picture})`}}
       >
         <div className="card__footer">

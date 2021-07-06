@@ -57,7 +57,7 @@ export const StyledDiv = styled.div`
           }
         }
 
-        &__bg {
+        &__img {
           background: left no-repeat;
           background-size: contain;
           &::before {
