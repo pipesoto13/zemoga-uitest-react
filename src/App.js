@@ -1,9 +1,16 @@
-import PostTitle from './components/PostTitle/PostTitle';
+import PostsSection from './components/PostsSection/PostsSection';
+import {data} from "./assets/data.json";
+
 
 function App() {
+
+  if (!localStorage.getItem('data') || JSON.parse(localStorage.getItem('data')).length === 0) {
+    localStorage.setItem("data", JSON.stringify(data))
+  }
+
   return (
     <>
-      <PostTitle></PostTitle>
+      <PostsSection data={JSON.parse(localStorage.getItem('data'))}></PostsSection>
     </>
   );
 }
