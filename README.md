@@ -3,7 +3,7 @@
 This project was created using Create React App.
 To persist data was used localStorage.
 
-## Requirements
+## Requirements (must be installed)
 •	nodejs
 •	yarn
 •	npm
