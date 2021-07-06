@@ -14,7 +14,7 @@ export const CardContainer = styled.article`
     flex: 0 0 90%;
   }
 
-  .people-card__bg {
+  .card__bg {
     height: 100%;
     background: center no-repeat;
     background-size: cover;
@@ -27,11 +27,11 @@ export const CardContainer = styled.article`
       display: block;
     }
 
-    .people-card__content {
+    .card__content {
       padding-right: 34px;
     }
 
-    .people-card__footer {
+    .card__footer {
       background: linear-gradient(
         180deg,
         rgba(0, 0, 0, 0.0001) 0%,
@@ -83,6 +83,10 @@ export const CardContainer = styled.article`
     &__title {
       font-size: 30px;
       margin-bottom: -5px;
+
+      @media all and (min-width: 1100px){
+        margin-left:70px;
+      }
     }
     &__description {
       margin-left: 30px;
@@ -116,7 +120,7 @@ export const CardContainer = styled.article`
     }
   }
 
-  .people-card {
+  .card {
     &__progress {
       display: flex;
       position: relative;
@@ -127,17 +131,30 @@ export const CardContainer = styled.article`
     }
     &__progress-label {
       position: absolute;
+
+      & > img {
+        height: 16px;
+
+        @media all and (min-width: 1100px){
+          height: 24px;
+        }
+      }
     }
     &__progress-val {
       display: flex;
       height: 36px;
       align-items: center;
-      color: #fff;
-
+      color: #FFFFFF;
       font-family: Lato;
       font-weight: normal;
       font-size: 18px;
       line-height: 22px;
+
+      @media all and (min-width: 1100px){
+        height: 54px;
+        font-size: 27px;
+        line-height: 32px;
+      }
 
       &--up {
         background: #3cbbb499;

@@ -34,13 +34,13 @@ function Card({ name, description, category, picture, lastUpdated, votes, index 
   )
 
   return (
-    <CardContainer className="people-card">
+    <CardContainer className="card">
       <div
-        className="people-card__bg"
+        className="card__bg"
         style={{ backgroundImage: `url(/assets/img/${picture})`}}
       >
-        <div className="people-card__footer">
-          <div className="people-card__content">
+        <div className="card__footer">
+          <div className="card__content">
             <div className="card-caption">
               <div className="card-caption__header">
                 <div>
@@ -50,7 +50,7 @@ function Card({ name, description, category, picture, lastUpdated, votes, index 
                     aria-label={`thumbs up`}
                   >
                     <img
-                      className="people-card__progress-icon"
+                      className="card__progress-icon"
                       src={`assets/img/thumbs-up.svg`}
                       alt={`thumbs up`}
                     />
@@ -69,15 +69,15 @@ function Card({ name, description, category, picture, lastUpdated, votes, index 
             </div>
           </div>
 
-          <div className="people-card__progress">
+          <div className="card__progress">
             <div
-              className="people-card__progress-val people-card__progress-val--up"
+              className="card__progress-val card__progress-val--up"
               style={{ width: `${perncetUp}%` }}
             >
-              <div className="people-card__progress-label">
+              <div className="card__progress-label">
                 <img
                   type="up"
-                  className="people-card__progress-icon"
+                  className="card__progress-icon"
                   src={`assets/img/thumbs-up.svg`}
                   alt={`thumbs up`}
                 />
@@ -85,14 +85,14 @@ function Card({ name, description, category, picture, lastUpdated, votes, index 
               </div>
             </div>
             <div
-              className="people-card__progress-val people-card__progress-val--down"
+              className="card__progress-val card__progress-val--down"
               style={{ width: `${perncetDown}%` }}
             >
-              <div className="people-card__progress-label">
+              <div className="card__progress-label">
                 <span>{perncetDown.toFixed(1)}</span>
                 <img
                   type="down"
-                  className="people-card__progress-icon"
+                  className="card__progress-icon"
                   src={`assets/img/thumbs-down.svg`}
                   alt={`thumbs down`}
                 />

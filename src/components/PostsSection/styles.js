@@ -14,7 +14,7 @@ export const StyledDiv = styled.div`
     flex-wrap: nowrap;
     @media all and (min-width: 768px) {
       flex-wrap: wrap;
-      .people-card {
+      .card {
         flex-basis: 100%;
         .card-caption {
           flex-basis: 50%;
@@ -29,6 +29,10 @@ export const StyledDiv = styled.div`
             margin-left: 0;
             margin-bottom: 2rem;
             margin-right: 2rem;
+
+            @media all and (min-width: 1100px) {
+              margin-left: 70px;
+            }
           }
         }
         &__footer {
@@ -66,7 +70,7 @@ export const StyledDiv = styled.div`
           padding: 0 1.25rem;
 
           @media all and (min-width: 1100px) {
-            padding: 8px 1.25rem;
+            padding: 0 1.25rem;
           }
         }
       }
