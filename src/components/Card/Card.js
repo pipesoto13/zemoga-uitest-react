@@ -5,7 +5,7 @@ import { CardContainer } from "./styles";
 import VoteInsert from "../VoteInsert/VoteInsert";
 
 
-function Card({ name, description, category, picture, lastUpdated, votes, index }) {
+function Card({ name, description, category, picture, lastUpdated, votes, index, view }) {
 
 
   const [btnAgain, setBtnAgain] = useState(null);
@@ -33,16 +33,18 @@ function Card({ name, description, category, picture, lastUpdated, votes, index 
     { addSuffix: true, addPrefix: false }
   )
 
+  const fileName = picture.replace(/\.[^/.]+$/, "")
+
   return (
-    <CardContainer className="people-card">
+    <CardContainer className="card">
       <div
-        className="people-card__bg"
-        style={{ backgroundImage: `url(/assets/img/${picture})`}}
+        className="card__img"
+        style={{ backgroundImage: `url(/assets/img/${view === 'list' ? fileName : fileName + '@2x'}.png)`}}
       >
-        <div className="people-card__footer">
-          <div className="people-card__content">
-            <div className="card-caption">
-              <div className="card-caption__header">
+        <div className={`card__gradient ${view}`} >
+          <div className="card__content">
+            <div className="info">
+              <div className="info__header">
                 <div>
                   <button
                     className={`buttons buttons--${perncetUp>=50 ? 'up' : 'down'}`}
@@ -50,18 +52,18 @@ function Card({ name, description, category, picture, lastUpdated, votes, index 
                     aria-label={`thumbs up`}
                   >
                     <img
-                      className="people-card__progress-icon"
+                      className="card__progress-icon"
                       src={`assets/img/thumbs-up.svg`}
                       alt={`thumbs up`}
                     />
                   </button>
                 </div>
-                <h2 className="card-caption__title">{name}</h2>
+                <h2 className="info__title">{name}</h2>
               </div>
-              <p className="card-caption__description">{description}</p>
+              <p className="info__description">{description}</p>
             </div>
             <div>
-              <div className="last-updated-label">
+              <div className="timestamp">
                 {!!btnAgain && <span>Thank you for your vote!</span>}
                 {!btnAgain && <span>{dateDistance} in <span className="category">{category}</span></span>}
               </div>
@@ -69,15 +71,15 @@ function Card({ name, description, category, picture, lastUpdated, votes, index 
             </div>
           </div>
 
-          <div className="people-card__progress">
+          <div className="card__progress">
             <div
-              className="people-card__progress-val people-card__progress-val--up"
+              className="card__progress-val card__progress-val--up"
               style={{ width: `${perncetUp}%` }}
             >
-              <div className="people-card__progress-label">
+              <div className="card__progress-label">
                 <img
                   type="up"
-                  className="people-card__progress-icon"
+                  className="card__progress-icon"
                   src={`assets/img/thumbs-up.svg`}
                   alt={`thumbs up`}
                 />
@@ -85,14 +87,14 @@ function Card({ name, description, category, picture, lastUpdated, votes, index 
               </div>
             </div>
             <div
-              className="people-card__progress-val people-card__progress-val--down"
+              className="card__progress-val card__progress-val--down"
               style={{ width: `${perncetDown}%` }}
             >
-              <div className="people-card__progress-label">
+              <div className="card__progress-label">
                 <span>{perncetDown.toFixed(1)}</span>
                 <img
                   type="down"
-                  className="people-card__progress-icon"
+                  className="card__progress-icon"
                   src={`assets/img/thumbs-down.svg`}
                   alt={`thumbs down`}
                 />

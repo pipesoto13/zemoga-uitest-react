@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 export const CardContainer = styled.article`
   flex: 0 0 calc((100% / 3) - 1rem);
-  margin: 1rem 0;
+  margin: 10px 0;
+  position: relative;
+  overflow: hidden;
 
   @media all and (max-width: 768px) {
     flex: 0 0 calc((100% / 2) - 1rem);
@@ -10,15 +12,16 @@ export const CardContainer = styled.article`
 
   @media all and (max-width: 500px) {
     flex: 0 0 90%;
-    margin-right: 1rem;
   }
 
-  .people-card__bg {
+  .card__img {
     height: 100%;
     background: center no-repeat;
     background-size: cover;
+    background-position: center;
     display: flex;
     align-items: flex-end;
+    margin-right: 11px;
 
     &:before {
       content: "";
@@ -26,11 +29,11 @@ export const CardContainer = styled.article`
       display: block;
     }
 
-    .people-card__content {
+    .card__content {
       padding-right: 34px;
     }
 
-    .people-card__footer {
+    .card__gradient {
       background: linear-gradient(
         180deg,
         rgba(0, 0, 0, 0.0001) 0%,
@@ -74,36 +77,66 @@ export const CardContainer = styled.article`
     }
   }
 
-  .card-caption {
+  .info {
     &__header {
       display: flex;
       align-items: flex-end;
+      
     }
+
     &__title {
       font-size: 30px;
+      line-height: 36px;
+      color: #FFFFFF;
       margin-bottom: -5px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+
+      @media all and (min-width: 768px){
+        font-size: 28px;
+        line-height: 34px;
+      }
+
+      @media all and (min-width: 1100px){
+        margin-left:70px;
+        font-size: 36px;
+        line-height: 63px;
+      }
     }
     &__description {
-      margin-left: 30px;
       font-size: 15px;
       line-height: 18px;
-    }
-    &__title,
-    &__description {
-      color: #fff;
+      color: #FFFFFF;
+      margin-left: 30px;
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
+
+      @media all and (min-width: 768px){
+        font-size: 14px;
+        line-height: 17px;
+      }
+
+      @media all and (min-width: 1100px){
+        font-size: 18px;
+        line-height: 22px;
+        width: 460px;
+      }
     }
   }
 
-  .last-updated-label {
-    color: #FFFFFF;
-    text-align: right;
+  .timestamp {
     font-size: 12px;
     line-height: 14px;
+    text-align: right;
+    color: #FFFFFF;
+    margin: 10px 0;
+    font-weight: bold;
 
     @media all and (min-width: 1100px){
       font-size: 15px;
@@ -115,7 +148,7 @@ export const CardContainer = styled.article`
     }
   }
 
-  .people-card {
+  .card {
     &__progress {
       display: flex;
       position: relative;
@@ -126,17 +159,30 @@ export const CardContainer = styled.article`
     }
     &__progress-label {
       position: absolute;
+
+      & > img {
+        height: 16px;
+
+        @media all and (min-width: 1100px){
+          height: 24px;
+        }
+      }
     }
     &__progress-val {
       display: flex;
       height: 36px;
       align-items: center;
-      color: #fff;
-
+      color: #FFFFFF;
       font-family: Lato;
       font-weight: normal;
       font-size: 18px;
       line-height: 22px;
+
+      @media all and (min-width: 1100px){
+        height: 54px;
+        font-size: 27px;
+        line-height: 32px;
+      }
 
       &--up {
         background: #3cbbb499;
