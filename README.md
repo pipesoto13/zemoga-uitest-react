@@ -1,6 +1,19 @@
-# Getting Started with Create React App
+# Zemoga-ui-test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created using Create React App.
+To persist data was used localStorage.
+
+## Requirements
+•	nodejs
+•	yarn
+•	npm
+
+## Procces to run the project
+  ### `git clone https://github.com/pipesoto13/zemoga-uitest-react.git`
+  ### `cd zemoga-uitest-react`
+  ### `yarn install (to install dependencies)`
+  ### `yarn start`
+
 
 ## Available Scripts
 
