@@ -2,15 +2,15 @@ import styled from "styled-components";
 
 export const CardContainer = styled.article`
   flex: 0 0 calc((100% / 3) - 1rem);
-  margin: 1rem 0;
-
-  @media all and (max-width: 768px) {
-    flex: 0 0 calc((100% / 2) - 1rem);
-  }
+  margin: 10px 0;
+  position: relative;
 
   @media all and (max-width: 500px) {
     flex: 0 0 90%;
-    margin-right: 1rem;
+  }
+
+  @media all and (max-width: 768px) {
+    flex: 0 0 calc((100% / 2) - 1rem);
   }
 
   .people-card__bg {

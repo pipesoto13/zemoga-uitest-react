@@ -10,9 +10,24 @@ export const Header = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 36px;
+  margin-bottom: 20px;
+
+  @media all and (min-width: 1100px){
+    margin-bottom: 28px;
+  }
+
   .title {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    color: #464646;
+    padding: 0;
     margin: 0;
+
+    @media all and (min-width: 1100px){
+      font-size: 45px;
+      line-height: 54px;
+    }
   }
 `
 
