@@ -4,13 +4,14 @@ export const CardContainer = styled.article`
   flex: 0 0 calc((100% / 3) - 1rem);
   margin: 10px 0;
   position: relative;
-
-  @media all and (max-width: 500px) {
-    flex: 0 0 90%;
-  }
+  overflow: hidden;
 
   @media all and (max-width: 768px) {
     flex: 0 0 calc((100% / 2) - 1rem);
+  }
+
+  @media all and (max-width: 500px) {
+    flex: 0 0 90%;
   }
 
   .people-card__bg {
