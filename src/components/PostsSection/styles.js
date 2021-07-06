@@ -64,6 +64,10 @@ export const StyledDiv = styled.div`
           display: flex;
           justify-content: space-between;
           padding: 0 1.25rem;
+
+          @media all and (min-width: 1100px) {
+            padding: 8px 1.25rem;
+          }
         }
       }
     }
