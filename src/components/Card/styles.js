@@ -100,7 +100,7 @@ export const CardContainer = styled.article`
   }
 
   .last-updated-label {
-    color: #111111;
+    color: #FFFFFF;
     text-align: right;
     font-size: 12px;
     line-height: 14px;
