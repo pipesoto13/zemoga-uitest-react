@@ -34,11 +34,13 @@ function Card({ name, description, category, picture, lastUpdated, votes, index,
     { addSuffix: true, addPrefix: false }
   )
 
+  const fileName = picture.replace(/\.[^/.]+$/, "")
+
   return (
     <CardContainer className="card">
       <div
         className="card__img"
-        style={{ backgroundImage: `url(/assets/img/${picture})`}}
+        style={{ backgroundImage: `url(/assets/img/${view === 'list' ? fileName : fileName + '@2x'}.png)`}}
       >
         <div className={`card__gradient ${view}`} >
           <div className="card__content">
