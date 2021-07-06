@@ -54,21 +54,9 @@ export const StyledDiv = styled.div`
         &__gradient.list{
           position: relative;
           width: 100%;
-          background: linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.0001) 0%,
-            #888888 19.79%,
-            #666666 50%,
-            rgba(51, 51, 51, 0.6) 71.88%
-          );
+          background: linear-gradient(90deg, rgba(0, 0, 0, 0.0001) 0%, #888888 19.79%, #666666 50%, rgba(51, 51, 51, 0.6) 71.88%);
           @media all and (min-width: 1100px) {
-            background: linear-gradient(
-              90deg,
-              rgba(0, 0, 0, 0.0001) 0%,
-              #888888 14.79%,
-              #666666 50%,
-              rgba(51, 51, 51, 0.6) 71.88%
-            );
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.0001) 0%, #888888 19.79%, #666666 50%, rgba(51, 51, 51, 0.6) 71.88%);
           }
         }
 

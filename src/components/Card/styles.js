@@ -18,6 +18,7 @@ export const CardContainer = styled.article`
     height: 100%;
     background: center no-repeat;
     background-size: cover;
+    background-position: center;
     display: flex;
     align-items: flex-end;
     margin-right: 11px;
@@ -82,7 +83,7 @@ export const CardContainer = styled.article`
       align-items: flex-end;
       
     }
-    
+
     &__title {
       font-size: 30px;
       line-height: 36px;
